@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+<bean id="account1" class="com.SpringAssignments.SpringAssignment3.pojo.BankAccount">
+<property name="accountId" value="101" />
+<property name="accountHolderName" value="Deva" />
+<property name="accountType" value="Salary" />
+<property name="accountBalance" value="100000.56" />
+</bean>
+<bean id="account2" class="com.SpringAssignments.SpringAssignment3.pojo.BankAccount">
+<property name="accountId" value="102" />
+<property name="accountHolderName" value="Chandu" />
+<property name="accountType" value="Current" />
+<property name="accountBalance" value="500000.56" />
+</bean>
+<bean id="account3" class="com.SpringAssignments.SpringAssignment3.pojo.BankAccount">
+<property name="accountId" value="103" />
+<property name="accountHolderName" value="Sunil" />
+<property name="accountType" value="Saving" />
+<property name="accountBalance" value="80000.56" />
+</bean>
+<bean id="account4" class="com.SpringAssignments.SpringAssignment3.pojo.BankAccount">
+<property name="accountId" value="104" />
+<property name="accountHolderName" value="Koushik" />
+<property name="accountType" value="Salary" />
+<property name="accountBalance" value="106000.56" />
+</bean>
+<bean id="repository" class="com.SpringAssignments.SpringAssignment3.service.BankAccountepositoryImpl">
+<property name="accounts">
+<list>
+<ref bean="account1"/>
+<ref bean="account2"/>
+<ref bean="account3"/>
+<ref bean="account4"/>
+</list>
+</property>
+</bean>
+<bean id="service1" class="com.SpringAssignments.SpringAssignment3.service.BankAccountServiceImpl">
+<property name="bankRepository" ref="repository" />
+ </bean>
+<bean id="controller" class="com.SpringAssignments.SpringAssignment3.controller.BankAccountController" autowire="byType">
+
+
+ </bean>
+
+</beans>
